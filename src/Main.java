@@ -36,48 +36,12 @@ public class Main {
         employees[8] = employee9;
         employees[9] = employee10;
 
-        // Данные всех сотрудников
+
         Employee[] empArr = Arrays.copyOf(employees, 10);
         Arrays.stream(empArr).forEach(System.out::println);
         System.out.println(empArr.length);
 
 
-        // Сумма всех зарплат
-        int sum = 0;
-        for (Employee employee : employees) {
-            sum += employee.getSalary();
-        }
-        System.out.println("Сумма всех зарплат: " + sum);
-
-        // Минимальная зарплата
-        Employee resultMin = employees[0];
-        int minSalary = employees[0].getSalary();
-        for (Employee employee : employees) {
-            if (employee.getSalary() < minSalary) {
-                minSalary = employee.getSalary();
-                resultMin = employee;
-            }
-        }
-        System.out.println("Минимальная зарплата: " + resultMin);
-
-        // Максимальная зарплата
-        Employee resultMax = employees[0];
-        int maxSalary = employees[0].getSalary();
-        for (Employee employee : employees) {
-            if (employee.getSalary() > maxSalary) {
-                maxSalary = employee.getSalary();
-                resultMax = employee;
-            }
-        }
-        System.out.println("Максимальная зарплата: " + resultMax);
-
-        // Среднеарифметическая зарплата
-        System.out.println("Среднеарифметическая зарплата: " + (sum / employees.length));
-
-        // Ф.И.О сотрудников
-        for (Employee employee : employees) {
-            System.out.println(employee.getName() + " " + employee.getPatronymic() + " " + employee.getSurname());
-        }
     }
 
     // Методы:
@@ -120,7 +84,7 @@ public class Main {
     }
 
     public static float calcAverSalary() {
-        return calcAllSalary() / employees.length;
+        return calcAllSalary() / (float) employees.length;
     }
 
     public static void printFullNames() {
